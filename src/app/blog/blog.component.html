@@ -1,6 +1,10 @@
 <input [(ngModel)]="blogDescription">
 <input [(ngModel)]="blogTitle">
 <button (click)="addBlog()">Add Blog</button>
-<div *ngFor="let blog of blog$ | async">
-  <h2>{{blog.title}}</h2>
-  <p>{{blog.description}}</p>
+<app-comments ngSkipHydration>
+  <div *ngFor="let blog of blog$ | async">
+    <h2>{{blog.title}}</h2>
+    <p>{{blog.description}}</p>
+  </div>
+</app-comments>
+

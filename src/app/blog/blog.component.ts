@@ -5,12 +5,13 @@ import { Blog } from './blog.interface';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Add the missing import
+import { CommentsComponent } from './comments/comments.component';
 
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [FirestoreModule, CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [FirestoreModule, CommonModule, FormsModule, ReactiveFormsModule, CommentsComponent],
   providers: [HttpClient],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss'
