@@ -27,8 +27,11 @@ export class BlogComponent {
   blog$ = collectionData(this.collection, {idField: 'id'}) as Observable<Blog[]>;
 
   addBlog() {
+    const newTaskRef = doc(collection(this.firestore, 'blog'));
     const blog = { title: this.blogTitle, description: this.blogDescription };
-    setDoc(doc(this.firestore, 'blog', blog.title), blog);
+    setDoc(newTaskRef, blog).finally(() => {
+      console.log('Blog added');
+    });
   }
 
 }
