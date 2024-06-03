@@ -6,4 +6,9 @@ export const routes: Routes = [
     path: 'blog',
     component: BlogComponent,
   },
+  {
+    path: 'admin',
+    loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent),
+    title: 'Admin'
+  },
 ];

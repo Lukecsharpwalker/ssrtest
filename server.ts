@@ -25,6 +25,11 @@ export function app(): express.Express {
     index: 'index.html',
   }));
 
+  // Route for the admin application
+  server.get('/admin*', (req, res) => {
+    res.sendFile(join(browserDistFolder, 'index.html'));
+  });
+
   // Serve robots.txt
   server.get('/robots.txt', (req, res) => {
     res.sendFile(join(browserDistFolder, 'robots.txt'));
