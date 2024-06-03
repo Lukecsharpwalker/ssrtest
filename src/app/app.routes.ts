@@ -9,6 +9,6 @@ export const routes: Routes = [
   {
     path: 'admin',
     loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent),
-    title: 'Admin'
+    title: 'Admin',
   },
 ];
